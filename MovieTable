@@ -1,17 +1,31 @@
-INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
-VALUES (1, 'Paul', 32, 'California', 20000.00 );
+Microsoft Windows [Version 10.0.19041.746]
+(c) 2020 Microsoft Corporation. All rights reserved.
 
-INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
-VALUES (2, 'Allen', 25, 'Texas', 15000.00 );
+C:\Windows\System32>cd..
 
-INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
-VALUES (3, 'Teddy', 23, 'Norway', 20000.00 );
+C:\Windows>cd D:\Sqlite\sqlite-tools-win32-x86-3360000
 
-INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
-VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00 );
+C:\Windows>d:
 
-INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
-VALUES (5, 'David', 27, 'Texas', 85000.00 );
+D:\Sqlite\sqlite-tools-win32-x86-3360000>prompt @$f
 
-INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
-VALUES (6, 'Kim', 22, 'South-Hall', 45000.00 );
+@)sqlite3 MovieTable.db
+SQLite version 3.36.0 2021-06-18 18:36:39
+Enter ".help" for usage hints.
+sqlite> create table MovieTable(moviename varchar(20), actor varchar(20), actress varchar(20), date varchar(25), director varchar(20));
+sqlite> insert into values('Nail Polish', 'Arjun Rampal', 'Madhooo', '1/1/2021', 'Bugs Bhargava');
+Error: near "values": syntax error
+sqlite> insert into MovieTable values ('Nail Polish', 'Arjun Rampal', 'Madhooo', '1/1/2021', 'Bugs Bhargava');
+sqlite> insert into MovieTable values ('Kaagaz', 'Pankaj', 'Tina', '7/1/2021', 'Satish');
+sqlite> insert into MovieTable values ('Roohi', 'Rajkumar', 'Janhvi', '11/03/2021', 'Hardik');
+sqlite> insert into MovieTable values ('Mumbai Saga', 'John', 'Kajal', '19/03/2021', 'SSanjay');
+sqlite> insert into MovieTable values ('Lahore Confidential', 'Arunoday', 'Richa', '4/4/2021', 'Kunal');
+sqlite> select * from MovieTable;
+Nail Polish|Arjun Rampal|Madhooo|1/1/2021|Bugs Bhargava
+Kaagaz|Pankaj|Tina|7/1/2021|Satish
+Roohi|Rajkumar|Janhvi|11/03/2021|Hardik
+Mumbai Saga|John|Kajal|19/03/2021|SSanjay
+Lahore Confidential|Arunoday|Richa|4/4/2021|Kunal
+sqlite> select actor from MovieTable where actor='John';
+John
+sqlite>
